@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment';
 })
 export class ReportService {
 
-  url = environment.API + '/item'; 
+  url = environment.API + '/vendas/sumario/VENDAS_SUMARIZADO'; 
 
   // injetando o HttpClient
   constructor(private httpClient: HttpClient, private http: HttpClient) { }
@@ -21,6 +21,14 @@ export class ReportService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   }
 
+  // Obtem relatorio de vendas consolidado
+  getReport(): Observable<Report> {
+   
+      return this.httpClient.get<Report>(this.url)
+        .pipe(
+          retry(2),
+          catchError(this.handleError))
+  }
 
   // Manipulação de erros
   handleError(error: HttpErrorResponse) {

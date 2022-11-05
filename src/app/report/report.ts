@@ -1,7 +1,9 @@
 export interface Report {
     id: number;
-    descricao: string;
-    preco: number;
-    detalhes: string;
-    quantidadeEstoque : string
+    nomeRelatorio: string;
+    totalVendas: number;
+    totalItensVendido: number;
+    totalClientes : number;
+    totalValor : number;
+    totalItensEstoque : number
 }

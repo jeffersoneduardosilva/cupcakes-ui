@@ -13,20 +13,21 @@ import { Report } from './report';
 
 export class ReportComponent {
 
-
+  report = {} as Report;
 
   ngOnInit(): void {
-    this.getItens();
+    this.getReport();
   }
 
    // Chama o serviço para obter relatorios
-   getItens() {
+   getReport() {
    
-  
+    this.reportService.getReport().subscribe((report: Report) => {
+      this.report = report;
+     });
       
     ;
   }
-
 
   constructor(
     private reportService: ReportService

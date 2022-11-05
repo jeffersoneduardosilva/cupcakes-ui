@@ -21,7 +21,7 @@ export class BuyService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   }
 
-  // Obtem todos os itens
+  // Obtem compra pelo id da transacao
   getBuyByTransactionId(idTransacao: string): Observable<Compra> {
    
     return this.httpClient.get<Compra>(this.url + idTransacao)
