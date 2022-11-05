@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API: 'http://localhost:8080/controller'
+  API: 'https://cupcakes-backend.herokuapp.com/controller'
 };
 
 /*
