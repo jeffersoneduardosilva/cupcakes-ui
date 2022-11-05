@@ -4,14 +4,14 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { Compra } from './buy';
-
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BuyService {
 
-  url = 'http://localhost:8080/controller/pedido/pedidos/id-transacao/'; 
+  url = environment.API + '/pedido/pedidos/id-transacao/'; 
 
   // injetando o HttpClient
   constructor(private httpClient: HttpClient) { }

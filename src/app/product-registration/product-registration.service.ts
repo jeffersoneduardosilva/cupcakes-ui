@@ -4,6 +4,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { Item } from './product-registration';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -11,7 +12,7 @@ import { Item } from './product-registration';
 })
 export class ProductRegistrationService {
 
-  url = 'http://localhost:8080/controller/item'; 
+  url = environment.API + '/item'; 
 
   // injetando o HttpClient
   constructor(private httpClient: HttpClient, private http: HttpClient) { }

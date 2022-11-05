@@ -5,7 +5,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { Carrinho, CarrinhoRequest } from './cart/cart';
-
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class CartService {
   items: Product[] = [];
   totalValue : number = 0;
 
-  url = 'http://localhost:8080/controller/pedido'; 
+  url = environment.API + '/pedido'; 
 
   constructor(
     private http: HttpClient
