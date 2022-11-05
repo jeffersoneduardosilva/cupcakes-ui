@@ -1,0 +1,30 @@
+<h3>Produtos</h3>
+
+<div *ngFor="let product of products">
+
+  <h3>
+    <a
+      [title]="product.descricao + ' details'"
+      [routerLink]="['/products', product.id]">
+      {{ product.descricao }}
+    </a>
+  </h3>
+
+  <p *ngIf="product.detalhes">
+    Detalhes: {{ product.detalhes }}
+  </p>
+
+  <p *ngIf="product.preco">
+    Preço: {{ product.preco | currency }}
+
+    <button type="button" (click)="addToCart(product)">Adicionar</button>
+
+
+  </p>
+
+  <app-product-alerts
+    [product]="product"
+    (notify)="onNotify()">
+  </app-product-alerts>
+
+</div>

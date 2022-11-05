@@ -1,0 +1,127 @@
+<h3>Detalhes da Compra</h3>
+
+
+<div ngFor="let compra of compra" >
+  <div class="cart-item" *ngFor="let item of compra.itens">
+    <span>{{ item.descricao }} </span>
+    <span>{{ item.preco | currency  }}</span>
+  </div>
+
+  <div>
+  <table style="width:100%">
+    <br/>
+    <tr>
+      <td>
+        <div>
+          <label style="color: rgb(252, 80, 0); font-family: Verdana, Geneva, Tahoma, sans-serif;">
+            DADOS DA COMPRA
+          </label>
+        </div>
+     </td>
+    </tr>
+  
+    <tr>
+      <td>
+        <div>
+  
+          <label for="nome">
+            Status
+          </label>
+          
+          <span>{{compra.status}}</span>
+        </div>
+  
+      </td>
+      <td>
+        <div>
+          <label for="nome">
+            Data da Compra
+          </label>
+          <span>{{compra.dataCompra}}</span>
+        </div>
+      </td>
+  
+  
+    </tr>
+    <br/>
+    <tr>
+      <td>
+        <div>
+  
+          <label for="nome">
+            Valor Total
+          </label>
+          
+          <span>{{compra.precoTotal | currency}}</span>
+        </div>
+  
+      
+  
+  
+    </tr>
+
+    <br/>
+    <tr>
+      <td>
+        <div>
+          <label style="color: rgb(252, 80, 0); font-family: Verdana, Geneva, Tahoma, sans-serif;">
+            DADOS DA ENTREGA
+          </label>
+        </div>
+     </td>
+    </tr>
+
+    <tr>
+      <td>
+        <div>
+  
+          <label for="nome">
+            NOME CLIENTE
+          </label>
+          
+          <span>{{compra.cliente.nome}}</span>
+        </div>
+  
+      </td>
+    </tr>
+    <br/>
+    <tr>
+      <td>
+        <div>
+  
+          <label for="nome">
+            E-MAIL CLIENTE
+          </label>
+          
+          <span>{{compra.cliente.eMail}}</span>
+        </div>
+  
+      </td>
+    </tr>
+    <br/>
+    <tr>
+      <td>
+        <div>
+  
+          <label for="nome">
+            ENDEREÇO
+          </label>
+          
+          <span>{{compra.cliente.endereco.rua}}, </span>
+          <span>{{compra.cliente.endereco.numero}} - </span>
+          <span>{{compra.cliente.endereco.cidade}} - </span>
+          <span>{{compra.cliente.endereco.uf}} </span>
+        </div>
+  
+      </td>
+    </tr>
+  
+    
+  </table>
+  
+</div>
+
+</div>
+
+
+

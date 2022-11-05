@@ -1,0 +1,58 @@
+<h3>Cadastrar Item para Venda</h3>
+
+<form [formGroup]="form">
+
+    <table style="width:100%">
+
+        <tr>
+            <td>
+              <div>
+      
+                <label for="nome">
+                  Descrição
+                </label>
+                <input id="nome" type="text" formControlName="descricao">
+              </div>
+      
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div>
+                <label for="nome">
+                  Detalhes
+                </label>
+                <input id="detalhes" type="text" formControlName="detalhes">
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div>
+                <label for="nome">
+                  Quantidade no Estoque
+                </label>
+                <input id="quantidadeEstoque" type="text" formControlName="quantidadeEstoque">
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div>
+                <label for="nome">
+                  Preço
+                </label>
+                <input id="preco" type="text" formControlName="preco">
+              </div>
+            </td>
+          </tr>
+
+    </table>   
+
+    <button type="button" (click)="cadastrarItem()">Gravar</button>
+
+</form>
+
+
+
+

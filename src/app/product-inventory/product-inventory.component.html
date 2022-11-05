@@ -1,0 +1,31 @@
+<h3>Gestão de Itens Disponíveis para Venda</h3>
+
+<div >
+
+
+  <table border="1">
+    <thead>
+      <th>Descrição</th>
+      <th>Detalhes</th>
+      <th>Preço</th>
+      <th>Estoque</th>
+    </thead>
+    <ng-container *ngFor="let item of itens">
+        <tr>
+            <td><h5>{{item.descricao}}</h5></td>
+            <td><h5>{{item.detalhes}}</h5></td>
+            <td><h5>{{item.preco  | currency }}</h5></td>
+            <td><h5>{{item.quantidadeEstoque}}</h5></td>
+        </tr>
+        
+    </ng-container>
+</table>
+
+
+
+</div>
+
+
+
+
+

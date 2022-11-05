@@ -1,0 +1,214 @@
+<h3>Carrinho</h3>
+
+<p>
+  <a routerLink="/shipping">Valores de envio</a>
+</p>
+
+<div class="cart-item" *ngFor="let item of items">
+  <span>{{ item.descricao }} </span>
+  <span>{{ item.preco | currency }}</span>
+</div>
+
+<div class="cart-item">
+  <span>Valor total</span>
+  <span>{{totalValue | currency}}</span>
+</div>
+
+
+<form [formGroup]="form">
+
+  <table style="width:100%">
+
+    <tr>
+      <td>
+        <div>
+          <label style="color: rgb(252, 80, 0); font-family: Verdana, Geneva, Tahoma, sans-serif;">
+            DADOS PESSOAIS
+          </label>
+        </div>
+     </td>
+    </tr>
+
+    <tr>
+      <td>
+        <div>
+
+          <label for="nome">
+            Nome
+          </label>
+          <input id="nome" type="text" formControlName="nome">
+        </div>
+
+      </td>
+      <td>
+        <div>
+          <label for="nome">
+            E-mail
+          </label>
+          <input id="eMail" type="text" formControlName="eMail">
+        </div>
+      </td>
+
+
+    </tr>
+
+    <tr>
+      <td>
+        <div>
+          <label for="nome">
+            CPF
+          </label>
+          <input id="cpf" type="text" formControlName="cpf">
+        </div>
+
+      </td>
+      <td>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <div>
+          <label style="color: rgb(252, 80, 0); font-family: Verdana, Geneva, Tahoma, sans-serif;">
+            DADOS DO PAGAMENTO
+          </label>
+        </div>
+     </td>
+    </tr>
+
+    <tr>
+      <td>
+        <div>
+          <label for="nome">
+            Numero cartão de crédito
+          </label>
+          <input id="numeroCartao" type="text" formControlName="numeroCartao">
+        </div>
+
+      </td>
+      <td>
+        
+    <div>
+      <label for="nome">
+        Nome no cartão de crédito
+      </label>
+      <input id="nomeCartao" type="text" formControlName="nomeCartao">
+    </div>
+      </td>
+    </tr>
+
+    <tr>
+     
+      <td>
+        
+    <div>
+      <label for="nome">
+        Mês validade
+      </label>
+      <input id="mesValidade" type="text" formControlName="mesValidade">
+    </div>
+    
+      </td>
+
+      <td>
+        <div>
+
+
+          <label for="nome">
+            Ano validade
+          </label>
+          <input id="anoValidade" type="text" formControlName="anoValidade">
+        </div>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <div>
+          <label for="nome">
+            Código de segurança
+          </label>
+          <input id="codigoSeguranca" type="text" formControlName="codigoSeguranca">
+        </div>
+
+      </td>
+      <td>
+        
+
+    
+      </td>
+    </tr>
+   
+    <tr>
+      <td>
+        <div>
+          <label style="color: rgb(252, 80, 0); font-family: Verdana, Geneva, Tahoma, sans-serif;">
+            DADOS DO ENDEREÇO DE ENTREGA
+          </label>
+        </div>
+     </td>
+    </tr>
+
+    <tr>
+      <td>
+        <div>
+          <label for="nome">
+            Rua
+          </label>
+          <input id="rua" type="text" formControlName="rua">
+        </div>
+
+      </td>
+      <td>
+        
+    <div>
+      <label for="nome">
+        Numero
+      </label>
+      <input id="numero" type="text" formControlName="numero">
+    </div>
+    
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <div>
+          <label for="nome">
+            Bairro
+          </label>
+          <input id="bairro" type="text" formControlName="bairro">
+        </div>
+
+      </td>
+      <td>
+        
+    <div>
+      <label  for="nome">
+        Cidade
+      </label>
+      <input id="cidade" type="text" formControlName="cidade">
+    </div>
+    
+      </td>
+    </tr>
+
+
+
+   
+
+    <div>
+
+      <span>
+        <label for="nome">
+          Estado
+        </label>
+        <input id="uf" type="text" formControlName="uf">
+      </span>
+    </div>
+  </table>
+
+  <button type="button" (click)="finalizarCompra()">Finalizar Compra</button>
+
+</form>
