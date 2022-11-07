@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { CartService } from '../cart.service';
 import { Carrinho, CarrinhoRequest } from './cart';
@@ -18,7 +18,7 @@ export class CartComponent {
   carrinho = {} as Carrinho;
   form!: FormGroup;
   idTransacao = '';
-  botaoFinalizarHabilitado = this.cartService.getItems().length > 0;
+  disableButton = this.cartService.getItems().length > 0;
 
   ngOnInit(): void {
     this.idTransacao = uuidv4();
@@ -32,7 +32,7 @@ export class CartComponent {
       precoTotal: [this.totalValue],
       status: [''],
  
-      nome: [''],
+      nome: ['', Validators.required],
       eMail: [''],
       cpf: [''],
 
@@ -64,12 +64,18 @@ export class CartComponent {
     this.form.reset();
   }
 
+  get registerFormControl() {
+    return this.form.controls;
+  }
+
   finalizarCompra(): void {
-     
-    this.cartService.saveCarrinho(this.form.value).subscribe((carrinho: CarrinhoRequest) => {});
-    this.clear();
-    window.alert("Pedido criado com sucesso! Pedido numero: " + this.idTransacao)
-    this.router.navigate(['/buy/' + this.idTransacao]);
+    if (this.form.valid) {
+      this.cartService.saveCarrinho(this.form.value).subscribe((carrinho: CarrinhoRequest) => {});
+      this.clear();
+      window.alert("Pedido criado com sucesso! Pedido numero: " + this.idTransacao)
+      this.router.navigate(['/buy/' + this.idTransacao]);
+    }
+
   }
 
 }

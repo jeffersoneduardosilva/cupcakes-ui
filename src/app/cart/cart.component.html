@@ -27,7 +27,15 @@
           </label>
         </div>
      </td>
+     <td>
+      <div>
+        <label style="color: rgb(255, 0, 0); font-family: Verdana, Geneva, Tahoma, sans-serif;">
+          * DADOS DE PREENCHIMENTO OBRIGATÓRIO
+        </label>
+      </div>
+   </td>
     </tr>
+    
 
     <tr>
       <td>
@@ -36,7 +44,7 @@
           <label for="nome">
             Nome
           </label>
-          <input id="nome" type="text" formControlName="nome">
+          <input id="nome" type="text" formControlName="nome" required >
         </div>
 
       </td>
@@ -45,7 +53,7 @@
           <label for="nome">
             E-mail
           </label>
-          <input id="eMail" type="text" formControlName="eMail">
+          <input id="eMail" type="text" formControlName="eMail" required >
         </div>
       </td>
 
@@ -58,7 +66,7 @@
           <label for="nome">
             CPF
           </label>
-          <input id="cpf" type="text" formControlName="cpf">
+          <input id="cpf" type="text" formControlName="cpf" required >
         </div>
 
       </td>
@@ -74,6 +82,13 @@
           </label>
         </div>
      </td>
+     <td>
+      <div>
+        <label style="color: rgb(255, 0, 0); font-family: Verdana, Geneva, Tahoma, sans-serif;">
+          * DADOS DE PREENCHIMENTO OBRIGATÓRIO
+        </label>
+      </div>
+    </td>
     </tr>
 
     <tr>
@@ -82,7 +97,7 @@
           <label for="nome">
             Numero cartão de crédito
           </label>
-          <input id="numeroCartao" type="text" formControlName="numeroCartao">
+          <input id="numeroCartao" type="text" formControlName="numeroCartao" required >
         </div>
 
       </td>
@@ -92,7 +107,7 @@
       <label for="nome">
         Nome no cartão de crédito
       </label>
-      <input id="nomeCartao" type="text" formControlName="nomeCartao">
+      <input id="nomeCartao" type="text" formControlName="nomeCartao" required >
     </div>
       </td>
     </tr>
@@ -105,7 +120,7 @@
       <label for="nome">
         Mês validade
       </label>
-      <input id="mesValidade" type="text" formControlName="mesValidade">
+      <input id="mesValidade" type="text" formControlName="mesValidade" required >
     </div>
     
       </td>
@@ -117,7 +132,7 @@
           <label for="nome">
             Ano validade
           </label>
-          <input id="anoValidade" type="text" formControlName="anoValidade">
+          <input id="anoValidade" type="text" formControlName="anoValidade" required >
         </div>
 
       </td>
@@ -129,7 +144,7 @@
           <label for="nome">
             Código de segurança
           </label>
-          <input id="codigoSeguranca" type="text" formControlName="codigoSeguranca">
+          <input id="codigoSeguranca" type="text" formControlName="codigoSeguranca" required >
         </div>
 
       </td>
@@ -144,10 +159,17 @@
       <td>
         <div>
           <label style="color: rgb(252, 80, 0); font-family: Verdana, Geneva, Tahoma, sans-serif;">
-            DADOS DO ENDEREÇO DE ENTREGA
+            ENDEREÇO DE ENTREGA
           </label>
         </div>
      </td>
+     <td>
+      <div>
+        <label style="color: rgb(255, 0, 0); font-family: Verdana, Geneva, Tahoma, sans-serif;">
+          * DADOS DE PREENCHIMENTO OBRIGATÓRIO
+        </label>
+      </div>
+   </td>
     </tr>
 
     <tr>
@@ -156,7 +178,7 @@
           <label for="nome">
             Rua
           </label>
-          <input id="rua" type="text" formControlName="rua">
+          <input id="rua" type="text" formControlName="rua" required >
         </div>
 
       </td>
@@ -166,7 +188,7 @@
       <label for="nome">
         Numero
       </label>
-      <input id="numero" type="text" formControlName="numero">
+      <input id="numero" type="text" formControlName="numero" required >
     </div>
     
       </td>
@@ -178,7 +200,7 @@
           <label for="nome">
             Bairro
           </label>
-          <input id="bairro" type="text" formControlName="bairro">
+          <input id="bairro" type="text" formControlName="bairro" required >
         </div>
 
       </td>
@@ -188,15 +210,11 @@
       <label  for="nome">
         Cidade
       </label>
-      <input id="cidade" type="text" formControlName="cidade">
+      <input id="cidade" type="text" formControlName="cidade" required >
     </div>
     
       </td>
     </tr>
-
-
-
-   
 
     <div>
 
@@ -204,11 +222,11 @@
         <label for="nome">
           Estado
         </label>
-        <input id="uf" type="text" formControlName="uf">
+        <input id="uf" type="text" formControlName="uf" required >
       </span>
     </div>
   </table>
 
-  <button type="button" (click)="finalizarCompra()" [disabled]="!botaoFinalizarHabilitado" >Finalizar Compra</button>
+  <button type="button" (click)="finalizarCompra()" [disabled]="!disableButton" >Finalizar Compra</button>
 
 </form>
