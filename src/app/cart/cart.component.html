@@ -209,6 +209,6 @@
     </div>
   </table>
 
-  <button type="button" (click)="finalizarCompra()">Finalizar Compra</button>
+  <button type="button" (click)="finalizarCompra()" [disabled]="!botaoFinalizarHabilitado" >Finalizar Compra</button>
 
 </form>

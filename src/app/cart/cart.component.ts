@@ -18,6 +18,7 @@ export class CartComponent {
   carrinho = {} as Carrinho;
   form!: FormGroup;
   idTransacao = '';
+  botaoFinalizarHabilitado = this.cartService.getItems().length > 0;
 
   ngOnInit(): void {
     this.idTransacao = uuidv4();
