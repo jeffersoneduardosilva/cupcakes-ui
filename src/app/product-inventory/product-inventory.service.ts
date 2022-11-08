@@ -12,7 +12,7 @@ import { environment } from 'src/environments/environment';
 })
 export class ProductInventoryService {
 
-  url = environment.API + '/item'; 
+  url = environment.API + '/item/cadastrados'; 
 
   // injetando o HttpClient
   constructor(private httpClient: HttpClient, private http: HttpClient) { }
