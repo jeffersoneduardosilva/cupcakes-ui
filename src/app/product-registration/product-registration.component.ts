@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProductRegistrationService } from './product-registration.service';
 import { Item } from './product-registration';
 import { Router } from '@angular/router';
@@ -21,19 +21,23 @@ export class ProductRegistrationComponent {
   buildForm() {
 
     this.form = this.formBuilder.group({
-      descricao: [''],
-      detalhes: [''],
-      quantidadeEstoque: [''],
-      preco: ['']
+      descricao: ['', Validators.required],
+      detalhes: ['', Validators.required],
+      quantidadeEstoque: ['', Validators.required],
+      preco: ['', Validators.required]
     });
     
   }
 
   cadastrarItem(){
-    this.productRegistrationService.saveItem(this.form.value).subscribe((item: Item) => {});
+
+    if (this.form.valid) {
+      this.productRegistrationService.saveItem(this.form.value).subscribe((item: Item) => {});
     
-    window.alert("Item cadastrado com sucesso!" )
-    this.router.navigate(['/product/inventory']);
+      window.alert("Item cadastrado com sucesso!" )
+      this.router.navigate(['/product/inventory']);
+    }
+
   };
 
   constructor(

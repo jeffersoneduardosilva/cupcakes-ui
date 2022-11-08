@@ -1,15 +1,28 @@
 <h3>Cadastrar Item para Venda</h3>
 
-<form [formGroup]="form">
+<form [formGroup]="form" onsubmit="return checkInp()" method="post" >
 
     <table style="width:100%">
+
+      <tr>
+        <td>
+          <div>
+  
+            <label style="color: rgb(255, 0, 0); font-family: Verdana, Geneva, Tahoma, sans-serif;">
+              * DADOS DE PREENCHIMENTO OBRIGATÓRIO
+            </label>
+
+          </div>
+  
+        </td>
+      </tr>
 
         <tr>
             <td>
               <div>
       
                 <label for="nome">
-                  Descrição
+                  Descrição *
                 </label>
                 <input id="nome" type="text" formControlName="descricao">
               </div>
@@ -20,7 +33,7 @@
             <td>
               <div>
                 <label for="nome">
-                  Detalhes
+                  Detalhes *
                 </label>
                 <input id="detalhes" type="text" formControlName="detalhes">
               </div>
@@ -30,9 +43,9 @@
             <td>
               <div>
                 <label for="nome">
-                  Quantidade no Estoque
+                  Quantidade no Estoque *
                 </label>
-                <input id="quantidadeEstoque" type="text" formControlName="quantidadeEstoque">
+                <input id="quantidadeEstoque" type="number" formControlName="quantidadeEstoque">
               </div>
             </td>
           </tr>
@@ -40,16 +53,16 @@
             <td>
               <div>
                 <label for="nome">
-                  Preço
+                  Preço *
                 </label>
-                <input id="preco" type="text" formControlName="preco">
+                <input id="preco" type="number" formControlName="preco">
               </div>
             </td>
           </tr>
 
     </table>   
 
-    <button type="button" (click)="cadastrarItem()">Gravar</button>
+    <button type="button" (click)="cadastrarItem()" >Gravar</button>
 
 </form>
 
