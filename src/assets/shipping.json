@@ -1,14 +1,10 @@
 [
   {
-    "type": "Overnight",
-    "price": 25.99
-  },
-  {
-    "type": "2-Day",
+    "type": "Motoboy",
     "price": 9.99
   },
   {
-    "type": "Postal",
-    "price": 2.99
+    "type": "Uber entregas",
+    "price": 19.99
   }
 ]
